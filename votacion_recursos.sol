@@ -29,20 +29,20 @@ contract Voting {
     
     // Función para autorizar a los votantes
     function authorizeVoter(address voter) public {
-        require(msg.sender == owner, "Sólo el dueño del contrato puede autorizar a los votantes");
+        require(msg.sender == owner, "Solo el dueno del contrato puede autorizar a los votantes");
         authorizedVoters[voter] = true;
     }
     
     // Función para registrar los recursos
     function registerResource(string memory name, uint id) public {
-        require(msg.sender == owner, "Sólo el dueño del contrato puede registrar recursos");
+        require(msg.sender == owner, "Solo el dueno del contrato puede registrar recursos");
         resources.push(Resource(name, id, 0));
     }
     
     // Función para votar por un recurso
     function vote(uint resourceId) public {
-        require(authorizedVoters[msg.sender], "El votante no está autorizado");
-        require(now <= votingDeadline, "La votación ha finalizado");
+        require(authorizedVoters[msg.sender], "El votante no esta autorizado");
+        require(block.timestamp <= votingDeadline, "La votacion ha finalizado");
         
         // Verificar si el recurso existe
         uint resourceIndex;
@@ -69,3 +69,4 @@ contract Voting {
         }
     }
 }
+
