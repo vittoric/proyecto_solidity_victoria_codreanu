@@ -1,4 +1,4 @@
-////SPDX-License-Identifier: MIT
+//SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.7;
 
@@ -23,7 +23,7 @@ contract Voting {
     address public owner;
     
     // Constructor
-    constructor() public {
+     constructor () {
         owner = msg.sender;
     }
     
@@ -69,4 +69,3 @@ contract Voting {
         }
     }
 }
-
