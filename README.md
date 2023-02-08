@@ -7,24 +7,27 @@ Equipo
 * Valeska Rios Zegarra<br>
 <hr>
 
-Este código es un contrato de Solidity que implementa un sistema de votación.
 
-El contrato almacena información sobre los recursos que se están votando mediante la estructura "Resource". Cada recurso tiene un nombre, un ID y un número de votos.
+Este código es un contrato de Ethereum escrito en lenguaje de programación Solidity.
 
-El contrato también mantiene un registro de votantes autorizados utilizando un diccionario "mapping".
+El contrato es llamado "Voting" y está diseñado para llevar a cabo una votación. Hay varios componentes principales en este contrato:
 
-El contrato tiene una fecha límite de votación que se almacena en la variable "votingDeadline".
+Estructura "Resource": esta estructura se utiliza para almacenar información sobre los recursos que se están votando. Incluye el nombre del recurso, su identificación única y el número de votos que ha recibido.
 
-El propietario del contrato es la dirección que lo desplegó y se almacena en la variable "owner".
+Arreglo "resources": este es un arreglo público que se utiliza para almacenar los recursos. Cada elemento en el arreglo es una instancia de la estructura "Resource".
 
-El contrato tiene un constructor que establece el propietario del contrato como la dirección que lo desplegó.
+Diccionario "authorizedVoters": este es un mapeo público que se utiliza para almacenar información sobre los votantes autorizados. La clave es la dirección de Ethereum de un votante y el valor es un valor booleano que indica si están autorizados o no.
 
-El contrato tiene una función "authorizeVoter" que permite al propietario autorizar a los votantes para que puedan votar.
+Variable "votingDeadline": esta es una variable pública que se utiliza para almacenar el tiempo límite de la votación. Se establece en el momento actual en segundos desde el epoch time (01/01/1970) más 5 días.
 
-La función "registerResource" permite al propietario registrar los recursos que se van a votar.
+Variable "owner": esta es una variable pública que se utiliza para almacenar la dirección Ethereum del propietario del contrato. El propietario del contrato es la dirección que lo desplegó y se almacena en la variable "owner".
 
-La función "vote" permite a los votantes autorizados votar por un recurso específico. Verifica si el votante está autorizado y si la votación aún está abierta antes de registrar el voto.
+Constructor: esta función es el constructor del contrato y se ejecuta cuando se crea el contrato. Establece la dirección Ethereum del remitente del mensaje como el propietario del contrato.
 
-La función "getWinner" es una función de vista que devuelve el ID del recurso con más votos.
+Función "authorizeVoter": esta función se utiliza para autorizar a los votantes. Solo el propietario del contrato puede ejecutar esta función.
 
-En general, este contrato permite que los recursos sean registrados y votados por votantes autorizados dentro de un período de tiempo limitado, y devuelve el recurso ganador con el mayor número de votos.
+Función "registerResource": esta función se utiliza para registrar un nuevo recurso para la votación. Solo el propietario del contrato puede ejecutar esta función.
+
+Función "vote": esta función se utiliza para votar por un recurso específico. Verifica si el votante está autorizado y si la votación todavía está en curso antes de aumentar el número de votos para el recurso específico.
+
+Función "getWinner": esta función se utiliza para obtener el recurso ganador de la votación. Recorre el arreglo de recursos y encuentra el recurso con el número más alto de votos.
