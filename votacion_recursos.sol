@@ -16,7 +16,7 @@ contract Voting {
     // Diccionario para almacenar los votantes autorizados
     mapping(address => bool) public authorizedVoters;
     
-    // Tiempo límite de la votación
+    // Tiempo límite de la votación obteniendo el momento actual en segundos desde el epoch time (01/01/1970) + 5 dias que durara la validez del contrato
     uint public votingDeadline = block.timestamp + 5 days;
     
     // Propietario del contrato
