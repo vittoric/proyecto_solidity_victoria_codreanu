@@ -17,7 +17,7 @@ contract Voting {
     mapping(address => bool) public authorizedVoters;
     
     // Tiempo límite de la votación
-    uint public votingDeadline;
+    uint public votingDeadline = block.timestamp + 5 days;
     
     // Propietario del contrato
     address public owner;
@@ -42,7 +42,7 @@ contract Voting {
     // Función para votar por un recurso
     function vote(uint resourceId) public {
         require(authorizedVoters[msg.sender], "El votante no esta autorizado");
-        require(block.timestamp <= votingDeadline, "La votacion ha finalizado");
+        require((block.timestamp) <= votingDeadline, "La votacion ha finalizado");
         
         // Verificar si el recurso existe
         uint resourceIndex;
