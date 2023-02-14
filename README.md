@@ -1,4 +1,4 @@
-# Development of a smart contract in solidity
+# Development of a smart contract in Solidity Programming Language
 ## that allows to generate and manage votes, for the equitable distribution of resources in disadvantaged communities. In many cases, these communities do not have access to the basic resources and services they need, such as potable water, energy, education, and health care. <br><br>
 
 Equipo
