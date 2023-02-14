@@ -1,5 +1,5 @@
-# Desarrollo de un contrato inteligente en solidity 
-## que permita generar y administrar votaciones, para la distribución equitativa de recursos en comunidades desfavorecidas. En muchos casos, estas comunidades no tienen acceso a los recursos y servicios básicos que necesitan, como agua potable, energía, educación y atención médica. <br><br>
+# Development of a smart contract in solidity
+## that allows to generate and manage votes, for the equitable distribution of resources in disadvantaged communities. In many cases, these communities do not have access to the basic resources and services they need, such as potable water, energy, education, and health care. <br><br>
 
 Equipo
 * Victoria Codreanu<br>
